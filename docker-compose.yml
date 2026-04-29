@@ -30,8 +30,8 @@ services:
     # container_name: scalehub_backend # Removed to allow multiple replicas with unique names
     deploy:
       replicas: 10 # Scale to 10 replicas for load testing
-      limits:
-        resources:
+      resources:
+        limits:
           cpus: '0.5' # Limit CPU usage to 50% per replica
           memory: 512M # Limit memory usage to 512MB per replica
     env_file:
