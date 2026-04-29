@@ -27,7 +27,9 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: scalehub_backend
+    # container_name: scalehub_backend
+    deploy:
+      replicas: 20
     env_file:
       - .env
     environment:
