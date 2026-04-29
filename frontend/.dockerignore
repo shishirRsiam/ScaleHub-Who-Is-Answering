@@ -1,0 +1,31 @@
+# Dockerfile for Frontend
+
+# Ignore node_modules
+node_modules/
+
+# Ignore build output
+build/
+dist/
+
+# Ignore logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore environment files
+.env
+.env.local
+.env.*.local
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE
+.vscode/
+.idea/
+.sublime-project
+
+# Ignore testing
+coverage/
+.jest/
