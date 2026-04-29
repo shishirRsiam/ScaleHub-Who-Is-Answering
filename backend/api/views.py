@@ -170,7 +170,7 @@ class ScaleTestView(APIView):
         start = time.perf_counter()
         container_id = _get_container_id()
 
-        create_learning_session(start, request.user, "register")
+        create_learning_session(start, request.user, "scale_test")
         return Response({
             "message": "Successfully connected to ScaleHub backend!",
             "container_id": container_id,
@@ -191,7 +191,7 @@ class HealthCheckView(APIView):
         start = time.perf_counter()
         formatted_time = time.strftime("%d %b %Y %H:%M:%S") + " UTC+6"
 
-        create_learning_session(start, request.user, "health_check")
+        create_learning_session(start, None, "health_check")
         return Response(
             {
                 "status": "healthy",

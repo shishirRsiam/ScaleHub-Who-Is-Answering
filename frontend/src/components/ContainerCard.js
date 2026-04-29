@@ -1,6 +1,8 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import { motion } from 'framer-motion';
 import { FaServer, FaCopy } from 'react-icons/fa';
+
 
 const PALETTE = ['#2ee6a6', '#ff8f3f', '#a78bfa', '#38bdf8', '#fb7185'];
 
@@ -33,7 +35,8 @@ function CompactContainerCard({ containerId, updatedAt, onClick }) {
   const handleCopy = (e) => {
     e.stopPropagation(); // Prevents triggering the card's onClick
     navigator.clipboard.writeText(containerId);
-    // You can trigger a toast notification here if you want
+    // show trigger a toast notification here i want
+    toast.success("Container ID copied to clipboard!");
   };
 
   return (
@@ -60,10 +63,9 @@ function CompactContainerCard({ containerId, updatedAt, onClick }) {
           <FaServer style={{ color }} className="text-lg drop-shadow-md" />
         </div>
 
-        <div className="re text-right">
+        <div className="relative justify-between text-right">
           <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
-            Last Used
-          </span>
+            Last Used: </span>
           <p className="text-xs font-medium text-slate-300">
             {timeAgo(updatedAt)}
           </p>
@@ -72,7 +74,7 @@ function CompactContainerCard({ containerId, updatedAt, onClick }) {
 
       {/* Footer: Container ID & Copy Action */}
       <div className="relative z-10 mt-5 flex items-end justify-between border-t border-white/5 pt-3">
-        <div>
+        <div className="flex flex-col items-start">
           <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
             Container ID
           </span>

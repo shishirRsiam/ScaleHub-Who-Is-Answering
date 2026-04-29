@@ -128,7 +128,7 @@ function Dashboard() {
               <div className="flex items-center gap-2 rounded-xl border border-tide-400/20 bg-tide-400/10 px-4 py-2.5">
                 <FaServer className="text-xs text-tide-400" />
                 <code className="text-sm font-semibold text-tide-400">
-                  {currentContainer.slice(-12)}
+                  Response Server ID: {currentContainer.slice(-12)}
                 </code>
               </div>
             )}
